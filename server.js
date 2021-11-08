@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const myName = ['Anton'];
+const myName = [];
 
 
 app.get('/', (req, res) => {
@@ -13,7 +13,7 @@ app.get('/greeting/:name', (req, res) => {
      res.send(myName[req.params.name]); 
   }else {
     res.send(
-      'What\'s up,' + req.params.name + 'It\'s so great to see you!'
+      'What\'s up, ' + req.params.name + '! It\'s so great to see you!'
       )
   } 
    
