@@ -8,15 +8,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/greeting/:name', (req, res) => {
-
     res.send(
         'What\'s up, ' + req.params.name + '! It\'s so great to see you!'
     )
-
 });
 
-app.get('/tip', (req, res) => {
-
+app.get('/tip/:total/:tipPercentage', (req, res) => {
+    const total = parseInt(req.params.total);
+    const tipPercentage = parseInt(req.params.tipPercentage);
+    res.send(`${tipPercentage/100*total}`);
 })
 
 
